@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(34, 29, 48);
+    color: var(--offwhite-color);
+    font-family: --font-main;
+    padding: 0;
+    margin: 0 20px 0 20px;
+    max-width: 100%;
+    position: relative;
+}
+
+body.preload *{
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+
+section {
+    display: grid;
+    position: relative;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+.deactivate-cursor {
+    pointer-events: none;
+    cursor: none;
+}
+
+
+/* Introduction */
+#intro {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#hello-text {
+    place-items: center start;
+    padding-right: 500px;
+    white-space: nowrap;
+}
+
+#wave {  /* Logic adopted from https://codepen.io/jakejarvis/pen/pBZWZw */
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+#name-text {
+    place-items: center start;
+    padding-right: 340px;
+    white-space: nowrap;
+}
+
+#sub-name-text {
+    place-items: end center;
+    padding-top: 20px;
+    font-weight: lighter;
+    font-style: oblique 20deg;
+}
+
+#btn-outline-to-home {
+    color: rgb(130, 174, 228);
+}
+
+
+/* Fixed Tabs */
+#tabs-container {
+    display: flex;
+    position: fixed;
+    top: 25%;
+    right: 3%;
+    opacity: 60%;
+    z-index: 1;
+}
+
+.tab-names {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.tab {
+    padding: 20% 0 20% 0; /* top right bottom left */
+    color: var(--offwhite-color);
+    font-size: 3vh;
+    border: none;
+}
+
+.tab-arrows {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.arrow {
+    padding: 0 10px 0 0;
+    color: var(--offwhite-color);
+    font-size: 7vh;
+    border: none;
+}
+
+.unselected-tab {
+    color: rgb(94, 94, 94);
+}
+
+.selected-tab {
+    color: white;
+}
+
+
+
+
+/* Animations */
+@keyframes wave-animation {  /* Animation for the hand wave */
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.hidden-left {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.hidden-right {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(200px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hide-tabs {
+    opacity: 0;
+    filter: opacity(0%) blur(1px);
+    transition: all 0.3s;
+
+    /* Make the tabs inactive */
+    
+}
+
+.show-tabs {
+    opacity: 1;
+    filter: opacity(100%) blur(0);
+
+    /* Make the tabs active */
+    pointer-events: auto;
+    cursor: auto;
+}
+
+
+@media(prefers-reduced-motion) {
+    .hidden-left {
+        transition : none;
+    }
+    .hidden-right {
+        transition : none;
+    }
+    .hide-tabs {
+        transition : none;
+    }
+}
+
+
+
+/* Variables */
+:root {
+    --primary-color: #50330C;
+    --accent-color: #68BA84;
+    --offwhite-color: #F8F8F8;
+    --white-color: #FFFFFF;
+    --text-color: #939393;
+    --font-main: 'Poppins', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+}
+
+
+/* border: 3px solid #fd0000; */

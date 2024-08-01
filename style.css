@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: rgb(34, 29, 48);
+    background-color:var(--primary-color);
     color: var(--offwhite-color);
     font-family: --font-main;
     padding: 0;
@@ -27,6 +27,18 @@ section {
     min-height: 100vh;
     margin-top: 20vh;
     margin-bottom: 20vh;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn {
+    color: rgb(94, 94, 94);
+}
+.btn:hover {
+    color: white;
 }
 
 .deactivate-cursor {
@@ -83,6 +95,106 @@ section {
     z-index: 1;
 }
 
+#tabs-icons-container {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    top: 5%;
+    left: 2%;
+    opacity: 90%;
+    z-index: 1;
+    height: 8%;
+    width: 20%;
+}
+
+.tabs-icon {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 5px 0px 0px 5px;
+    position: relative;
+    color: white;
+    background: #222;
+    z-index: 1;
+}
+
+.tabs-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #222; /* Static background color */
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.tabs-icon::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: inherit;
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+.tabs-icon:hover::after {
+    opacity: 1;
+    animation: moveGradient 3s alternate infinite;
+}
+
+.tabs-icon:hover .tabs-icon-img {
+    filter: invert(100%);
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+.tabs-icon-img {
+    padding: 0 0 3px 0;
+    filter: invert(50%);
+    z-index: 2;
+}
+
+.tabs-icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
 .tab-names {
     display: flex;
     flex-flow: column;
@@ -113,6 +225,10 @@ section {
     color: rgb(94, 94, 94);
 }
 
+.unselected-tab:hover {
+    color: white;
+}
+
 .selected-tab {
     color: white;
 }
@@ -130,6 +246,12 @@ section {
    50% { transform: rotate(10.0deg) }
    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
   100% { transform: rotate( 0.0deg) }
+}
+
+@keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
 }
 
 .hidden-left {
@@ -158,7 +280,8 @@ section {
     transition: all 0.3s;
 
     /* Make the tabs inactive */
-    
+    pointer-events: none;
+    cursor: none;
 }
 
 .show-tabs {
@@ -187,7 +310,7 @@ section {
 
 /* Variables */
 :root {
-    --primary-color: #50330C;
+    --primary-color: rgb(34, 29, 48);
     --accent-color: #68BA84;
     --offwhite-color: #F8F8F8;
     --white-color: #FFFFFF;
@@ -196,6 +319,11 @@ section {
     --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --border-anim-color-1: #052b2f;
+    --border-anim-color-2: #073438;
+    --border-anim-color-3: #0e4b50;
+    --border-anim-color-4: #2d8f85;
+    --border-anim-color-5: #637c54;
 }
 
 

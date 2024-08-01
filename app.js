@@ -39,15 +39,21 @@ function createIntroWaypoint(section) {
         element: document.getElementById(section),
         enter: function() {
             const tabsContainer = document.getElementById("tabs-container");
+            const tabsIconContainer = document.getElementById("tabs-icons-container");
             tabsContainer.classList.remove("show-tabs");
+            tabsIconContainer.classList.remove("show-tabs");
         },
         entered: function() {
             const tabsContainer = document.getElementById("tabs-container");
+            const tabsIconContainer = document.getElementById("tabs-icons-container");
             tabsContainer.classList.remove("show-tabs");
+            tabsIconContainer.classList.remove("show-tabs");
         },
         exited: function() {
             const tabsContainer = document.getElementById("tabs-container");
+            const tabsIconContainer = document.getElementById("tabs-icons-container");
             tabsContainer.classList.add("show-tabs");
+            tabsIconContainer.classList.add("show-tabs");
         }
     })
 };
@@ -104,3 +110,21 @@ function timeoutButton(button) {
     button.classList.add("deactivate-cursor");
     setTimeout(function() { button.classList.remove("deactivate-cursor"); }, 500);
 }
+
+
+
+function checkScreenSize() {
+    const tabsIcons = document.querySelectorAll('.tabs-icon-text');
+    if (window.innerWidth <= 1100) {
+        tabsIcons.forEach(icon => {
+            icon.classList.add('hidden');
+        });
+    } else {
+        tabsIcons.forEach(icon => {
+            icon.classList.remove('hidden');
+        });
+    }
+}
+
+window.addEventListener('resize', checkScreenSize);
+window.addEventListener('load', checkScreenSize);

@@ -113,18 +113,18 @@ function timeoutButton(button) {
 
 
 
-function checkScreenSize() {
-    const tabsIcons = document.querySelectorAll('.tabs-icon-text');
-    if (window.innerWidth <= 1100) {
-        tabsIcons.forEach(icon => {
-            icon.classList.add('hidden');
-        });
-    } else {
-        tabsIcons.forEach(icon => {
-            icon.classList.remove('hidden');
-        });
-    }
-}
+// function checkScreenSize() {
+//     const tabsIcons = document.querySelectorAll('.tabs-icon-text');
+//     if (window.innerWidth <= 1100) {
+//         tabsIcons.forEach(icon => {
+//             icon.classList.add('hidden');
+//         });
+//     } else {
+//         tabsIcons.forEach(icon => {
+//             icon.classList.remove('hidden');
+//         });
+//     }
+// }
 
-window.addEventListener('resize', checkScreenSize);
-window.addEventListener('load', checkScreenSize);
+// window.addEventListener('resize', checkScreenSize);
+// window.addEventListener('load', checkScreenSize);

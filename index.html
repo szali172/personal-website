@@ -58,7 +58,6 @@
             id="btn-outline-to-home"
             class="btn btn-outline-secondary"
             href="#first-section"
-            tabindex="-1"
             >Check Out My Work Here</a
           >
         </div>
@@ -66,7 +65,7 @@
 
       <!-- Icons -->
       <div id="icons-container" class="hide-tabs">
-        <a class="btn icon" href="https://github.com/szali172" tabindex="1">
+        <a id="git-icon" class="btn icon" href="https://github.com/szali172">
           <img
             src="Assets/github-logo.png"
             class="icon-img"
@@ -74,7 +73,7 @@
           />
           <div class="icon-text">GitHub</div>
         </a>
-        <a class="btn icon" href="https://www.linkedin.com/in/szali172/" tabindex="2">
+        <a id="linkedin-icon" class="btn icon" href="https://www.linkedin.com/in/szali172/">
           <img
             src="Assets/linkedin-logo.png"
             class="icon-img"
@@ -88,7 +87,6 @@
       <button
         id="contact-me-button"
         class="btn btn-primary hide-tabs"
-        tabindex="3"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasWithBackdrop"
         aria-controls="offcanvasWithBackdrop">
@@ -104,7 +102,6 @@
               class="btn arrow unselected-tab"
               href="#"
               onclick="timeoutButton(this);"
-              tabindex="4"
               >⮬</a
             >
           </div>
@@ -114,7 +111,6 @@
               class="btn arrow unselected-tab"
               href="#"
               onclick="timeoutButton(this);"
-              tabindex="8"
               >⮮</a
             >
           </div>
@@ -123,28 +119,28 @@
         <div class="tab-names">
           <div>
             <a
+              id="first-section-tab"
               class="btn tab unselected-tab"
               href="#first-section"
               onclick="timeoutButton(this);"
-              tabindex="5"
               >Objective</a
             >
           </div>
           <div>
             <a
+              id="second-section-tab"
               class="btn tab unselected-tab"
               href="#second-section"
               onclick="timeoutButton(this);"
-              tabindex="6"
               >Projects</a
             >
           </div>
           <div>
             <a
+              id="third-section-tab"
               class="btn tab unselected-tab"
               href="#third-section"
               onclick="timeoutButton(this);"
-              tabindex="7"
               >Music</a
             >
           </div>

@@ -31,38 +31,69 @@ function getTab(section_id) {
   return tab;
 }
 
+/* 
+ * Dynamically updates tabIndex's 
+ * according to the section in view
+ */
+function updateTabIndexes(elementsInView, elementsOutOfView) {
+  // Set the tabIndex for elements in the view now in order
+  for (let i = 0; i < elementsInView.length; i++) {
+    document.getElementById(elementsInView[i]).tabIndex = i + 1;
+    console.log(document.getElementById(elementsInView[i]));
+  }
+
+  // Reset tabIndex for elements now out of the view
+  for (let i = 0; i < elementsOutOfView.length; i++) {
+    document.getElementById(elementsOutOfView[i]).tabIndex = -1;
+  }
+}
+
+
+
 /*
  * Create waypoint marker for the intro section only
  */
 function createIntroWaypoint(section) {
+
+  const tabsContainer = document.getElementById("tabs-container");
+  const tabsIconContainer = document.getElementById("icons-container");
+  const contactMeButton = document.getElementById("contact-me-button");
+
+  // Ids of elements that use tabindex attributes
+  const introTabbedElementsIds = ["btn-outline-to-home"];
+  const mainTabbedElementsIds = ["git-icon", "linkedin-icon", "contact-me-button",
+                                 "arrow-up", "first-section-tab", "second-section-tab", 
+                                 "third-section-tab", "arrow-down"];
+
+  function enterIntroSection() {
+    tabsContainer.classList.remove("show-tabs");
+    tabsIconContainer.classList.remove("show-tabs");
+    contactMeButton.classList.remove("show-tabs");
+    updateTabIndexes(introTabbedElementsIds, mainTabbedElementsIds);
+  }
+
+  function exitIntroSection() {
+    tabsContainer.classList.add("show-tabs");
+    tabsIconContainer.classList.add("show-tabs");
+    contactMeButton.classList.add("show-tabs");
+    updateTabIndexes(mainTabbedElementsIds, introTabbedElementsIds);
+  }
+
   new Waypoint.Inview({
     element: document.getElementById(section),
     enter: function () {
-      const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("icons-container");
-      const contactMeButton = document.getElementById("contact-me-button");
-      tabsContainer.classList.remove("show-tabs");
-      tabsIconContainer.classList.remove("show-tabs");
-      contactMeButton.classList.remove("show-tabs");
+      enterIntroSection();
     },
     entered: function () {
-      const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("icons-container");
-      const contactMeButton = document.getElementById("contact-me-button");
-      tabsContainer.classList.remove("show-tabs");
-      tabsIconContainer.classList.remove("show-tabs");
-      contactMeButton.classList.remove("show-tabs");
+      enterIntroSection();
     },
     exited: function () {
-      const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("icons-container");
-      const contactMeButton = document.getElementById("contact-me-button");
-      tabsContainer.classList.add("show-tabs");
-      tabsIconContainer.classList.add("show-tabs");
-      contactMeButton.classList.add("show-tabs");
+      exitIntroSection();
     },
   });
 }
+
+
 
 /*
  * Create waypoint markers for each section, except the intro
@@ -101,6 +132,8 @@ const sections = ["intro", "first-section", "second-section", "third-section"];
 // Create waypoints for each section
 sections.slice(1).forEach((element) => createSectionWaypoint(element));
 createIntroWaypoint(sections[0]); // Intro section has a special waypoint
+
+
 
 /*
  * The page animations are hidden on page load.

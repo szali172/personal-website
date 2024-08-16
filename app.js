@@ -39,21 +39,27 @@ function createIntroWaypoint(section) {
     element: document.getElementById(section),
     enter: function () {
       const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("tabs-icons-container");
+      const tabsIconContainer = document.getElementById("icons-container");
+      const contactMeButton = document.getElementById("contact-me-button");
       tabsContainer.classList.remove("show-tabs");
       tabsIconContainer.classList.remove("show-tabs");
+      contactMeButton.classList.remove("show-tabs");
     },
     entered: function () {
       const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("tabs-icons-container");
+      const tabsIconContainer = document.getElementById("icons-container");
+      const contactMeButton = document.getElementById("contact-me-button");
       tabsContainer.classList.remove("show-tabs");
       tabsIconContainer.classList.remove("show-tabs");
+      contactMeButton.classList.remove("show-tabs");
     },
     exited: function () {
       const tabsContainer = document.getElementById("tabs-container");
-      const tabsIconContainer = document.getElementById("tabs-icons-container");
+      const tabsIconContainer = document.getElementById("icons-container");
+      const contactMeButton = document.getElementById("contact-me-button");
       tabsContainer.classList.add("show-tabs");
       tabsIconContainer.classList.add("show-tabs");
+      contactMeButton.classList.add("show-tabs");
     },
   });
 }

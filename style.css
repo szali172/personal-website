@@ -26,6 +26,7 @@ html,
 body,
 .body-container {
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 body.preload * {
@@ -46,6 +47,22 @@ section {
   font-size: 1.2vmax;
 }
 
+footer {
+  display: flex;
+  position: absolute;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  gap: 10vw;
+  width: 100%;
+  height: 100px;
+  background: var(--secondary-color);
+  color: var(--secondary-accent-color);
+  font-family: var(--font-main);
+  font-size: 2.5vh;
+  box-shadow: 0px 10px 20px 5px black;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -62,6 +79,8 @@ img {
   pointer-events: none;
   cursor: none;
 }
+
+
 
 /* Introduction */
 #intro {
@@ -103,7 +122,7 @@ img {
   white-space: nowrap;
   font-weight: lighter;
   font-style: oblique 20deg;
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
 
 #btn-outline-to-home {
@@ -112,19 +131,10 @@ img {
   color: rgb(130, 174, 228);
 }
 
-/* Fixed Tabs */
-#tabs-container {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translate(0%, -50%);
-  opacity: 60%;
-  z-index: 1;
-  overflow: hidden;
-}
 
-#tabs-icons-container {
+
+/* Icons */
+#icons-container {
   display: flex;
   gap: 10px;
   position: fixed;
@@ -136,7 +146,7 @@ img {
   width: 43vh;
 }
 
-.tabs-icon {
+.icon {
   display: inline-flex;
   align-items: center;
   border-radius: 30px;
@@ -148,7 +158,7 @@ img {
   width: auto;
 }
 
-.tabs-icon::before {
+.icon::before {
   content: "";
   position: absolute;
   top: 0;
@@ -160,7 +170,7 @@ img {
   z-index: 0;
 }
 
-.tabs-icon::after {
+.icon::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -186,32 +196,26 @@ img {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
-.tabs-icon:hover::after {
+.icon:hover::after {
   opacity: 1;
   animation: moveGradient 2s alternate infinite;
 }
 
-.tabs-icon:hover .tabs-icon-img {
+.icon:hover .tabs-icon-img {
   filter: invert(100%);
 }
 
-.tabs-icon:hover .tabs-icon-text {
+.icon:hover .tabs-icon-text {
   filter: invert(0%);
 }
 
-@keyframes moveGradient {
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.tabs-icon-img {
+.icon-img {
   padding: 0 0 3px 0;
   filter: invert(50%);
   z-index: 2;
 }
 
-.tabs-icon-text {
+.icon-text {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -224,6 +228,37 @@ img {
 
 .hidden {
   display: none !important;
+}
+
+
+
+/* Contact Me Button */
+#contact-me-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  z-index: 1;
+}
+
+.offcanvas {
+  box-shadow: 5px -5px 30px -15px black inset;
+  background-color: var(--ternary-color);
+  color: var(--ternary-accent-color);
+}
+
+
+
+/* Tabs */
+#tabs-container {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translate(0%, -50%);
+  opacity: 60%;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .tab-names {
@@ -264,15 +299,7 @@ img {
   color: white;
 }
 
-footer {
-  position: absolute;
-  width: 120%;
-  height: 100px;
-  background: var(--secondary-color);
-  color: var(--secondary-accent-color);
-  font-family: var(--font-main);
-  box-shadow: 0px 10px 20px 5px black;
-}
+
 
 /* Animations */
 @keyframes wave-animation {
@@ -345,7 +372,7 @@ footer {
 
   /* Make the tabs active */
   pointer-events: auto;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion) {
@@ -360,13 +387,17 @@ footer {
   }
 }
 
+
+
 /* Variables */
 :root {
   --margins: 0 20px 0 20px;
   --primary-color: #221D30;
   --secondary-color: #141824;
+  --ternary-color: #797385;
   --accent-color: #dad9d9;
   --secondary-accent-color: #b7cccb;
+  --ternary-accent-color: white;
   --white-color: #ffffff;
   --font-main: "Poppins", sans-serif;
   --font-weight-light: 300;

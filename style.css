@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap");
 
+/* Tags and General Classes */
 /* * {
   outline: 1px solid red;
 } */
@@ -101,6 +102,15 @@ img {
   animation-iteration-count: infinite; /* Never stop waving :) */
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
+
+  /* Remove text selection highlighting */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 #my-name-is-text {
@@ -142,20 +152,24 @@ img {
   left: 20px;
   opacity: 90%;
   z-index: 1;
-  height: 8vh;
-  width: 43vh;
+  height: 10%;
+  min-width: 10vw;
+  width: auto;
+  height: auto;
 }
 
 .icon {
   display: inline-flex;
   align-items: center;
-  border-radius: 30px;
-  padding: 5px 0px 0px 5px;
+  border-radius: 40px;
+  padding: 15px 15px 15px 10px;
   position: relative;
   background: #222;
   z-index: 1;
-  transition: width 0.5s, padding 0.5s;
-  width: auto;
+  transition: ease all 1s;
+  width: fit-content;
+  height: fit-content;
+  max-height: 4em;
 }
 
 .icon::before {
@@ -201,18 +215,19 @@ img {
   animation: moveGradient 2s alternate infinite;
 }
 
-.icon:hover .tabs-icon-img {
-  filter: invert(100%);
+.icon:hover .icon-img {
+  filter: invert(0%);
 }
 
-.icon:hover .tabs-icon-text {
+.icon:hover .icon-text {
   filter: invert(0%);
 }
 
 .icon-img {
-  padding: 0 0 3px 0;
   filter: invert(50%);
   z-index: 2;
+  width: 2rem;
+  height: 2rem;
 }
 
 .icon-text {
@@ -221,8 +236,10 @@ img {
   justify-content: space-evenly;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 3vh;
-  padding: 0 0 5px 3px;
+  overflow-x:hidden;
+  font-size: 1rem;
+  padding: 0 0 0 10px;
+  transition: ease all 0s;
   z-index: 1;
 }
 
@@ -242,11 +259,28 @@ img {
 }
 
 .offcanvas {
+  --bs-offcanvas-width: 25%;
   box-shadow: 5px -5px 30px -15px black inset;
   background-color: var(--ternary-color);
   color: var(--ternary-accent-color);
 }
 
+.offcanvas-title {
+  text-align: center;
+}
+
+.offcanvas-fields {
+  display: inline-block;
+}
+
+#offcanvas-fields-link {
+  text-decoration: none;
+  color: var(--ternary-accent-color);
+}
+
+#offcanvas-fields-link:hover {
+  opacity: 70%;
+}
 
 
 /* Tabs */
@@ -259,6 +293,8 @@ img {
   opacity: 60%;
   z-index: 1;
   overflow: hidden;
+  /* width: 100px;
+  height: 200px; */
 }
 
 .tab-names {
@@ -270,7 +306,7 @@ img {
 .tab {
   padding: 20% 0 20% 0; /* top right bottom left */
   color: var(--accent-color);
-  font-size: 3vh;
+  font-size: 1rem;
   border: none;
 }
 
@@ -278,12 +314,13 @@ img {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  padding: 15px 0;
 }
 
 .arrow {
   padding: 0 10px 0 0;
   color: var(--accent-color);
-  font-size: 7vh;
+  font-size: 2.2rem;
   border: none;
 }
 
@@ -297,6 +334,8 @@ img {
 
 .selected-tab {
   color: white;
+  font-size: 1.05rem;
+  transition: ease all 0.5s;
 }
 
 
@@ -337,6 +376,7 @@ img {
 }
 
 .hidden-left {
+  overflow-x: hidden;
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
@@ -344,9 +384,10 @@ img {
 }
 
 .hidden-right {
+  overflow-x: hidden;
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(200px);
+  transform: translateX(100%);
   transition: all 1s;
 }
 
@@ -389,9 +430,35 @@ img {
 
 
 
+/* Media Queries */
+@media (max-width: 500px) {
+  #tabs-container {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 800px) {
+  .icon {
+    padding: 10px 10px;
+    transition-duration: 0.5s;
+  }
+
+  .icon-text {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    padding: 0;
+  }
+
+  .icon-img {
+    filter: invert(100%);
+  }
+}
+
 /* Variables */
 :root {
-  --margins: 0 20px 0 20px;
+  --margins: 0;
   --primary-color: #221D30;
   --secondary-color: #141824;
   --ternary-color: #797385;

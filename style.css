@@ -69,6 +69,23 @@ img {
   max-height: 100%;
 }
 
+.text-section {
+  border: 5px solid rgb(55, 55, 55);
+  border-radius: 20px;
+  background-color: rgb(216, 216, 216);
+  color: black;
+  padding: 20px 30px;
+  box-shadow: 
+    4px 5px 10px 1px black,
+    inset -5px 5px 50px 5px rgb(101, 101, 101);
+}
+
+.section-header {
+  opacity: 0;
+  filter: opacity(0%) blur(1px);
+  transition: ease-out all 0.1s;
+}
+
 .btn {
   color: rgb(94, 94, 94);
 }
@@ -152,7 +169,6 @@ img {
   left: 20px;
   opacity: 90%;
   z-index: 1;
-  height: 10%;
   min-width: 10vw;
   width: auto;
   height: auto;
@@ -169,7 +185,7 @@ img {
   transition: ease all 1s;
   width: fit-content;
   height: fit-content;
-  max-height: 4em;
+  transition: width 0.2s ease, padding 0.2s ease; /* Fast expand transition */
 }
 
 .icon::before {
@@ -192,15 +208,19 @@ img {
   width: calc(100% + 6px);
   height: calc(100% + 6px);
   background: linear-gradient(
-    60deg,
-    hsl(224, 85%, 66%),
+    45deg,
+    hsl(275, 86%, 45%),
+    hsl(275, 77%, 61%),
     hsl(269, 85%, 66%),
     hsl(314, 85%, 66%),
     hsl(359, 85%, 66%),
     hsl(44, 85%, 66%),
+    hsl(179, 85%, 66%),
     hsl(89, 85%, 66%),
     hsl(134, 85%, 66%),
-    hsl(179, 85%, 66%)
+    hsl(277, 66%, 55%),
+    hsl(299, 71%, 44%),
+    hsl(328, 87%, 52%)
   );
   background-size: 300% 300%;
   /* background-position: 0 50%; */
@@ -212,7 +232,7 @@ img {
 
 .icon:hover::after {
   opacity: 1;
-  animation: moveGradient 2s alternate infinite;
+  animation: moveGradient 4s alternate infinite;
 }
 
 .icon:hover .icon-img {
@@ -226,8 +246,8 @@ img {
 .icon-img {
   filter: invert(50%);
   z-index: 2;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .icon-text {
@@ -237,9 +257,9 @@ img {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x:hidden;
-  font-size: 1rem;
+  font-size: 1.2vmax;
   padding: 0 0 0 10px;
-  transition: ease all 0s;
+  transition: ease all 0.5s;
   z-index: 1;
 }
 
@@ -252,10 +272,14 @@ img {
 /* Contact Me Button */
 #contact-me-button {
   position: fixed;
-  top: 20px;
+  top: 25px;
   right: 20px;
   color: white;
   z-index: 1;
+  font-size: 1.2vmax;
+  max-width: fit-content;
+  max-height: fit-content;
+  text-wrap: nowrap;
 }
 
 .offcanvas {
@@ -293,21 +317,28 @@ img {
   opacity: 60%;
   z-index: 1;
   overflow: hidden;
-  /* width: 100px;
-  height: 200px; */
+  width: 130px;
+  min-width: fit-content;
+  max-width: 12vw;
+  height: 200px;
+  min-height: 35vh;
+  max-height: 50vh;
 }
 
 .tab-names {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 0.5vh 0;
 }
 
 .tab {
   padding: 20% 0 20% 0; /* top right bottom left */
   color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 1.2vmax;
   border: none;
+  margin: 5px 5px;
+  height: fit-content;
 }
 
 .tab-arrows {
@@ -320,12 +351,13 @@ img {
 .arrow {
   padding: 0 10px 0 0;
   color: var(--accent-color);
-  font-size: 2.2rem;
+  font-size: 3vmax;
   border: none;
 }
 
 .unselected-tab {
   color: rgb(94, 94, 94);
+  transition: ease all 0.3s;
 }
 
 .unselected-tab:hover {
@@ -334,8 +366,8 @@ img {
 
 .selected-tab {
   color: white;
-  font-size: 1.05rem;
-  transition: ease all 0.5s;
+  font-size: 1.3vmax;
+  transition: ease all 0.3s;
 }
 
 
@@ -374,6 +406,30 @@ img {
     background-position: 100% 50%;
   }
 }
+
+/* Letter by letter animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typingReverse {
+  0% {
+    width: auto; /* Start with full width */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    width: 0; /* Collapse width to 0 */
+    opacity: 0; /* Fade out */
+  }
+}
+
+
+
 
 .hidden-left {
   overflow-x: hidden;
@@ -416,6 +472,9 @@ img {
   cursor: pointer;
 }
 
+
+
+/* Media Queries */
 @media (prefers-reduced-motion) {
   .hidden-left {
     transition: none;
@@ -429,14 +488,19 @@ img {
 }
 
 
-
-/* Media Queries */
 @media (max-width: 500px) {
   #tabs-container {
     opacity: 0;
     visibility: hidden;
   }
+
+  .section-header {
+    opacity: 1;
+    filter: opacity(100%) blur(0);
+    transition: ease-in all 0.5s;
+  }
 }
+
 
 @media (max-width: 800px) {
   .icon {
@@ -454,7 +518,43 @@ img {
   .icon-img {
     filter: invert(100%);
   }
+
+  .text-section {
+    padding: 20px 10px;
+  }
+
+  .expanded .icon-text {
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    padding: 0 5px;
+    transition: opacity 0.5s ease, width 0.5s ease;
+    animation: typing 0.5s steps(50) forwards; /* Typing effect */
+  }
+
+  .icon-text.hidden {
+    animation: typingReverse 0.5s steps(100) forwards; /* Apply reverse typing animation on close */
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .expanded .icon {
+    transition: width 0.5s ease, padding 0.5s ease;
+  }
 }
+
+@media (hover: none) { /* Touchscreen devices */
+  .icon.expanded::after {
+    opacity: 1;
+    animation: moveGradient 4s alternate infinite;
+  }
+
+  .icon.expanded .icon-text {
+    filter: invert(100%);
+  }
+}
+
+
 
 /* Variables */
 :root {

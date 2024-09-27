@@ -7,7 +7,7 @@ function animateFavicon() {
 
   worker.onmessage = function(e) {
     let frameIndex = e.data;
-    let filename = `/Assets/animated_favicon_frames/frame_${String(frameIndex).padStart(2, '0')}_delay-0.04s.png`;
+    let filename = `/Assets/animated_favicon_frames/frame_${String(frameIndex)}_delay-0.04s.png`;
     document.getElementById('icon').href = filename;
   };
 }
@@ -171,7 +171,9 @@ function timeoutButton(button) {
 }
 
 
-
+/*
+ *
+ */
 const icons = document.querySelectorAll('.icon');
 
 icons.forEach(button => {
@@ -226,24 +228,25 @@ icons.forEach(button => {
 
 
 
-customElements.define("my-el", class extends HTMLElement {
-  constructor() {
-    super().attachShadow({mode:"open"}).innerHTML=`<a></a>`;
-    this.a = this.shadowRoot.querySelector("a");
-  }
+
+// customElements.define("my-el", class extends HTMLElement {
+//   constructor() {
+//     super().attachShadow({mode:"open"}).innerHTML=`<a></a>`;
+//     this.a = this.shadowRoot.querySelector("a");
+//   }
   
-  set myText(v) {
-    this.a.textContent = v;
-    this.a.style = "color: white";
-  }
-});
+//   set myText(v) {
+//     this.a.textContent = v;
+//     this.a.style = "color: white";
+//   }
+// });
 
-const frag = new DocumentFragment();
-const el = document.createElement("my-el");
-frag.append(el);
-el.myText = "abc"; 
+// const frag = new DocumentFragment();
+// const el = document.createElement("my-el");
+// frag.append(el);
+// el.myText = "abc"; 
 
-document.body.append(frag);
+// document.body.append(frag);
 
 /* 
  * Parse the current Spotify playlist page and grab the playlist image

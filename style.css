@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 body {
@@ -15,11 +16,13 @@ body {
   font-family: var(--font-main);
   max-width: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .body-container {
-  padding: 0;
-  margin: var(--margins);
+  /* padding: 0; */
+  margin: 0;
+  padding: var(--margins);
   max-width: 100%;
 }
 
@@ -62,11 +65,6 @@ footer {
   font-family: var(--font-main);
   font-size: 2.5vh;
   box-shadow: 0px 10px 20px 5px black;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .text-section {
@@ -160,6 +158,105 @@ img {
 
 
 
+/* Music */
+#spotify-playlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.5em;
+
+  border-radius: 7px;
+  text-decoration: none;
+  background: linear-gradient(180deg, #1aab4d, #271f1f);
+  box-shadow: 0px 0px 10px 0px #0a2b15, inset 0px 0px 10px 0px #0a2b15;
+  width: fit-content;
+  height: fit-content;
+  overflow: auto;
+  margin: 10px 0px 10px 15px;
+  padding: 0.5em;
+}
+
+#playlist-img {
+  place-self: center;
+  box-shadow: 0px 0px 10px 1px black;
+  border-radius: 5px;
+  width: 3em;
+  height: 3em;
+}
+
+.playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0px;
+  place-self: center;
+  overflow: hidden;
+  width: fit-content;
+
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#playlist-name {
+  font-size: 1.5vmax;
+}
+
+#playlist-subheading {
+  color: rgba(185, 255, 243, 0.941);
+  font-size: 0.8vmax;
+  white-space: nowrap;
+  animation: scrolling-text 6s linear infinite;
+}
+
+
+#spotify-playlist:hover {
+  translate: 0 -2px;
+  transition: ease all 0.5s;
+}
+
+#spotify-playlist:not(:hover) {
+  transition: ease all 0.5s;
+}
+
+#spotify-playlist:hover #playlist-img {
+  scale: 95%;
+  transition: ease all 0.3s;
+}
+
+#spotify-playlist:not(:hover) #playlist-img {
+  transition: ease all 0.3s;
+}
+
+#spotify-playlist:hover #playlist-name {
+  translate: 6px 0;
+  color: rgb(35, 210, 169);
+  transition: ease all 0.3s;
+}
+
+#spotify-playlist:not(:hover) #playlist-name {
+  color: white;
+  transition: ease all 0.3s;
+}
+
+.bi-spotify {
+  place-self: center;
+  margin: 0 0 0 2em;
+}
+
+#spotify-playlist:hover .bi-spotify {
+  translate: 0 -2px;
+  fill: bisque;
+  transition: ease all 0.5s;
+}
+
+#spotify-playlist:not(:hover) .bi-spotify {
+  transition: ease all 0.5s;
+}
+
+
+
+
 /* Icons */
 #icons-container {
   display: flex;
@@ -230,6 +327,15 @@ img {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
+.icon:hover {
+  scale:110%;
+  transition: ease all 0.5s;
+}
+
+.icon:not(:hover) {
+  transition: ease all 0.5s;
+}
+
 .icon:hover::after {
   opacity: 1;
   animation: moveGradient 4s alternate infinite;
@@ -280,6 +386,16 @@ img {
   max-width: fit-content;
   max-height: fit-content;
   text-wrap: nowrap;
+}
+
+#contact-me-button:hover {
+  scale: 110%;
+  color: ivory;
+  transition: ease all 0.5s;
+}
+
+#contact-me-button:not(:hover){
+  transition: ease all 0.5s;
 }
 
 .offcanvas {
@@ -362,6 +478,7 @@ img {
 
 .unselected-tab:hover {
   color: white;
+  scale: 105%;
 }
 
 .selected-tab {
@@ -425,6 +542,21 @@ img {
   100% {
     width: 0; /* Collapse width to 0 */
     opacity: 0; /* Fade out */
+  }
+}
+
+@keyframes scrolling-text {
+  0% {
+    transform: translateX(100%); /* Start off-screen on the right */
+  }
+  10% {
+    transform: translateX(101%); /* Delay at the start */
+  }
+  90% {
+    transform: translateX(-100%); /* Scroll to the left */
+  }
+  100% {
+    transform: translateX(-100%); /* Delay at the end */
   }
 }
 

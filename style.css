@@ -20,9 +20,7 @@ body {
 }
 
 .body-container {
-  /* padding: 0; */
-  margin: 0;
-  padding: var(--margins);
+  margin: var(--margins);
   max-width: 100%;
 }
 
@@ -53,11 +51,9 @@ section {
 
 footer {
   display: flex;
-  position: absolute;
-  display: inline-flex;
-  align-content: center;
   justify-content: center;
-  gap: 10vw;
+  align-items: center;
+  
   width: 100%;
   height: 100px;
   background: var(--secondary-color);
@@ -174,6 +170,7 @@ footer {
   overflow: auto;
   margin: 10px 0px 10px 15px;
   padding: 0.5em;
+  transition: ease all 0.5s;
 }
 
 #playlist-img {
@@ -182,6 +179,7 @@ footer {
   border-radius: 5px;
   width: 3em;
   height: 3em;
+  transition: ease all 0.3s;
 }
 
 .playlist-info {
@@ -200,6 +198,7 @@ footer {
 
 #playlist-name {
   font-size: 1.5vmax;
+  transition: ease all 0.3s;
 }
 
 #playlist-subheading {
@@ -209,22 +208,14 @@ footer {
   animation: scrolling-text 6s linear infinite;
 }
 
-
-#spotify-playlist:hover {
-  translate: 0 -2px;
-  transition: ease all 0.5s;
-}
-
-#spotify-playlist:not(:hover) {
+.bi-spotify {
+  place-self: center;
+  margin: 0 0 0 2em;
   transition: ease all 0.5s;
 }
 
 #spotify-playlist:hover #playlist-img {
   scale: 95%;
-  transition: ease all 0.3s;
-}
-
-#spotify-playlist:not(:hover) #playlist-img {
   transition: ease all 0.3s;
 }
 
@@ -234,26 +225,16 @@ footer {
   transition: ease all 0.3s;
 }
 
-#spotify-playlist:not(:hover) #playlist-name {
-  color: white;
-  transition: ease all 0.3s;
-}
-
-.bi-spotify {
-  place-self: center;
-  margin: 0 0 0 2em;
+#spotify-playlist:hover {
+  translate: 0 -2px;
+  transition: ease all 0.5s;
 }
 
 #spotify-playlist:hover .bi-spotify {
   translate: 0 -2px;
-  fill: bisque;
+  fill: rgb(35, 210, 169);
   transition: ease all 0.5s;
 }
-
-#spotify-playlist:not(:hover) .bi-spotify {
-  transition: ease all 0.5s;
-}
-
 
 
 
@@ -345,7 +326,7 @@ footer {
   filter: invert(0%);
 }
 
-.icon:hover .icon-text {
+.icon :hover .icon-text {
   filter: invert(0%);
 }
 
@@ -421,6 +402,7 @@ footer {
 #offcanvas-fields-link:hover {
   opacity: 70%;
 }
+
 
 
 /* Tabs */

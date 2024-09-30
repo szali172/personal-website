@@ -171,57 +171,71 @@ function timeoutButton(button) {
 }
 
 
+
 /*
- *
+ * Allow button to be expanded on mobile resolutions.
+ * Buttons will auto collapse after inactivity
  */
 const icons = document.querySelectorAll('.icon');
 
+function isSmallScreen() {
+  return window.matchMedia('(max-width: 800px)').matches;
+}
+
 icons.forEach(button => {
-  let expanded = false; // Track the button's expansion state
+  button.expanded = false;
   let timeout;
 
   button.addEventListener('click', function(event) {
     const iconText = button.querySelector('.icon-text');
 
     // Prevent default navigation behavior on the first click
-    if (!expanded) {
-      event.preventDefault();
+    if (isSmallScreen()) {
+      if (!button.expanded) {
+        event.preventDefault();
 
-      // Collapse other icons
-      icons.forEach(otherButton => {
-        if (otherButton !== button) {
-          const otherIconText = otherButton.querySelector('.icon-text');
-          otherIconText.style.animation = 'none'; // Reset animation
-          otherIconText.classList.add('hidden'); // Trigger reverse typing animation
-          otherButton.classList.remove('expanded'); // Collapse other buttons
-          otherButton.expanded = false; // Update their expanded state
-        }
-      });
+        // Collapse other icons
+        icons.forEach(otherButton => {
+          if (otherButton !== button) {
+            const otherIconText = otherButton.querySelector('.icon-text');
+            otherIconText.style.animation = 'none';
+            otherIconText.classList.add('hidden');
+            otherButton.classList.remove('expanded');
+            otherButton.expanded = false;
 
-      // Expand the current button and show the text
-      button.classList.add('expanded');
-      iconText.classList.remove('hidden'); // Show the text
-      iconText.style.animation = 'typing 0.5s steps(100) forwards'; // Typing effect
-      expanded = true;
+            // Clear the timeout for other buttons
+            if (otherButton.timeout) {
+              clearTimeout(otherButton.timeout);
+              otherButton.timeout = null;
+            }
+          }
+        });
 
-      // Clear any existing timeouts to avoid conflicts
-      clearTimeout(timeout);
+        // Expand the current button and show the text
+        button.classList.add('expanded');
+        iconText.classList.remove('hidden');
+        iconText.style.animation = 'typing 0.5s steps(100) forwards'; // Typing effect
+        button.expanded = true;
 
-      // Set timeout to shrink the button after 5 seconds if no second click happens
-      timeout = setTimeout(() => {
-        iconText.style.animation = 'none'; // Reset animation
-        iconText.classList.add('hidden'); // Trigger reverse typing animation
+        // Collapse the button after 5 seconds of button inactivity
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          iconText.style.animation = 'none';
+          iconText.classList.add('hidden');
 
-        setTimeout(() => {
-          button.classList.remove('expanded');
-          expanded = false;
-        }, 500);
-      }, 5000);
+          setTimeout(() => {
+            button.classList.remove('expanded');
+            button.expanded = false;
+          }, 500);
+        }, 5000);
 
-    // If the button is already expanded, allow the navigation to occur
-    } else {
-      const href = button.getAttribute('href');
-      if (href) { window.location.href = href; }
+        button.timeout = timeout;
+
+      // If the button is already expanded, allow the navigation to occur
+      } else {
+        const href = button.getAttribute('href');
+        if (href) { window.location.href = href; }
+      }
     }
   });
 });
@@ -247,12 +261,3 @@ icons.forEach(button => {
 // el.myText = "abc"; 
 
 // document.body.append(frag);
-
-/* 
- * Parse the current Spotify playlist page and grab the playlist image
- */
-// function parsePlaylist(playlist_url) {
-
-// }}
-
-// parsePlaylist("https://open.spotify.com/playlist/5KFFA9C8g5mVQtNPOZ6tNz");

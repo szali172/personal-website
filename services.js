@@ -40,7 +40,6 @@ async function getPlaylist(access_token) {
 function displayPlaylist() {
     getAccessToken().then(response => {
         getPlaylist(response.access_token).then(playlistObj => {
-            console.log(playlistObj)
             const playlistTag = document.getElementById('spotify-playlist');
             playlistTag.setAttribute('href', playlistObj.external_urls['spotify'])
             

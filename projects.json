@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Test",
+        "image": "Assets/linkedin-logo.png",
+        "description": "another one",
+        "skills": ["HTML", "CSS", "JS", "Angular"]
+    },
+    {
+        "name" : "TestTwo",
+        "image": "Assets/github-logo.png",
+        "description": "another one as well. A much longer description!",
+        "skills": ["C#", ".NET"]
+    }
+]

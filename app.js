@@ -115,39 +115,61 @@ function createIntroWaypoint(section) {
 /*
  * Create waypoint markers for each section, except the intro
  */
-function enterSection(element, section) {
-  element.childNodes[1].classList.add("show");
+function enterSection(element, section, pics) {
+  try {
+    const hiddenChild = element.querySelector(':scope > .hidden-left') || element.querySelector(':scope > .hidden-right');
+    hiddenChild.classList.add("show");
+  } catch {
+    console.error(`Failed to reveal a hidden section for ${element}`);
+  }
+  
+  try {
+    pics.forEach(x => document.getElementById(x).classList.add("show"));
+  } catch {
+    
+  }
+  
   setArrowOptions(section);
   const tab = getTab(element.getAttribute("id"));
   tab.classList.add("selected-tab");
 }
 
-function exitSection(element) {
-  element.childNodes[1].classList.remove("show");
+function exitSection(element, pics) {
+  try {
+    const hiddenChild = element.querySelector(':scope > .hidden-left') || element.querySelector(':scope > .hidden-right');
+    hiddenChild.classList.remove("show");
+  } catch {
+    console.error(`Failed to hide a hideable element for ${element}`);
+  }
+
+  try {
+    pics.forEach(x => document.getElementById(x).classList.remove("show"));
+  } catch { }
   const tab = getTab(element.getAttribute("id"));
   tab.classList.remove("selected-tab");
 }
 
-function createSectionWaypoint(section) {
+function createSectionWaypoint(section, pics) {
   new Waypoint.Inview({
     element: document.getElementById(section),
     enter: function () {
-      enterSection(this.element, section);
+      enterSection(this.element, section, pics);
     },
     entered: function () {
-      enterSection(this.element, section);
+      enterSection(this.element, section, pics);
     },
     exited: function () {
-      exitSection(this.element);
+      exitSection(this.element, pics);
     },
   });
 }
 
 const tabs = document.querySelectorAll(".tab");
 const sections = ["intro", "first-section", "second-section", "third-section"];
+const pictures = {"first-section": ['pic-one', 'pic-two', 'pic-three'],}
 
 // Create waypoints for each section
-sections.slice(1).forEach((element) => createSectionWaypoint(element));
+sections.slice(1).forEach((element) => createSectionWaypoint(element, pictures[element]));
 createIntroWaypoint(sections[0]); // Intro section has a special waypoint
 
 
@@ -168,6 +190,16 @@ function timeoutButton(button) {
   setTimeout(function () {
     button.classList.remove("deactivate-cursor");
   }, 500);
+}
+
+/*
+ * Brings the selected picture to the top of the view stack
+ */
+function bringToTop(div) {
+  div.classList.add('image-view')
+  setTimeout(function() {
+    div.classList.remove('image-view')
+  }, 3000)
 }
 
 

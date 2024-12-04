@@ -115,19 +115,18 @@ function createIntroWaypoint(section) {
 /*
  * Create waypoint markers for each section, except the intro
  */
+function getHiddenElements(element) {
+    return Array.from(element.getElementsByClassName('hidden-left'))
+                .concat(Array.from(element.getElementsByClassName('hidden-right')))
+}
+
 function enterSection(element, section, pics) {
-  try {
-    const hiddenChild = element.querySelector(':scope > .hidden-left') || element.querySelector(':scope > .hidden-right');
-    hiddenChild.classList.add("show");
-  } catch {
-    console.error(`Failed to reveal a hidden section for ${element}`);
-  }
+  // Reveal hidden sections
+  getHiddenElements(element).forEach(x => x.classList.add("show"));
   
   try {
     pics.forEach(x => document.getElementById(x).classList.add("show"));
-  } catch {
-    
-  }
+  } catch { }
   
   setArrowOptions(section);
   const tab = getTab(element.getAttribute("id"));
@@ -135,16 +134,13 @@ function enterSection(element, section, pics) {
 }
 
 function exitSection(element, pics) {
-  try {
-    const hiddenChild = element.querySelector(':scope > .hidden-left') || element.querySelector(':scope > .hidden-right');
-    hiddenChild.classList.remove("show");
-  } catch {
-    console.error(`Failed to hide a hideable element for ${element}`);
-  }
+  // Hide hideable sections
+  getHiddenElements(element).forEach(x => x.classList.remove("show"));
 
   try {
     pics.forEach(x => document.getElementById(x).classList.remove("show"));
   } catch { }
+  
   const tab = getTab(element.getAttribute("id"));
   tab.classList.remove("selected-tab");
 }

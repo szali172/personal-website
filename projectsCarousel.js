@@ -15,7 +15,7 @@ function createCarouselItem(project, index) {
       <div class="d-flex justify-content-center align-items-center">
         <img src="${project.image}" alt="${project.name}">
       </div>
-    `;
+      `;
     return item;
 }
   
@@ -27,11 +27,15 @@ function displayProjectDetails(project) {
   
     const skillsList = document.getElementById('project-skills');
     skillsList.innerHTML = '';
-    project.skills.forEach(skill => {
-      const listItem = document.createElement('li');
-      listItem.textContent = skill;
-      skillsList.appendChild(listItem);
-    });
+
+    for (const category in project.skills) {
+      project.skills[category].forEach(skill => {
+        const chip = document.createElement('span');
+        chip.textContent = skill;
+        chip.classList.add('skill', `${category}-skill`, 'noselect');
+        skillsList.appendChild(chip)
+      })
+    }
 }
   
 

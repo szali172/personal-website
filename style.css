@@ -346,6 +346,7 @@ footer {
   background-color: var(--secondary-color);
   border-radius: 1vmax;
   box-shadow: 0.3vmax 0 0.9vmax -0.2vmax black;
+  z-index: 1;
   height: max(30rem, 30vmax);
   transition-delay: 200ms;
 }
@@ -362,14 +363,52 @@ footer {
   height: calc(max(30rem, 30vmax) - 0.5vmax);
   transform: translateX(-10%);
   padding: 0 0 0 5%;
-  z-index: -1;
   transition: filter 1s ease, opacity 0.5s ease;
   transition-delay: 800ms;
 }
 
-#project-details.blur {
-  filter: blur(5px);
-  opacity: 0;
+#project-skills {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7vmax;
+  pointer-events: auto;
+}
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0.1vmax solid white;
+  border-radius: 3vmax;
+  min-width: max(40px, 5vmax);
+  width: fit-content;
+  height: fit-content;
+  padding: 0.7vmax;
+  transition: transform 0.5s ease-in;
+}
+
+.skill:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-out;
+}
+
+.backend-skill {
+  background: violet;
+}
+
+.frontend-skill {
+  background: rgb(129, 132, 32);
+}
+
+.cloud-skill {
+  background: purple;
+}
+
+.other-skill {
+  background: gray;
 }
 
 

@@ -1,14 +1,77 @@
 [
     {
-        "name" : "Test",
+        "name" : "Personal Website",
+        "subheading": "Custom Portfolio Website",
+        "role": "Solo Developer",
+        "relativeDate": "Developing since Jul 2024",
         "image": "Assets/linkedin-logo.png",
-        "description": "another one",
-        "skills": ["HTML", "CSS", "JS", "Angular"]
+        "gitLink": "https://github.com/szali172/personal-website",
+        "description": "Everything you see on this website was handcrafted by yours truly :) I was determined to build this website without any frameworks to display my vanilla skills",
+        "skills": {
+            "backend": [],
+            "frontend": ["HTML 5", "CSS 3", "JavaScript"],
+            "cloud": ["AWS"],
+            "other": ["Git", "GitHub", "Visual Studio Code"]
+        }
     },
     {
-        "name" : "TestTwo",
-        "image": "Assets/github-logo.png",
-        "description": "another one as well. A much longer description!",
-        "skills": ["C#", ".NET"]
+        "name" : "WhoDis?",
+        "subheading": "Social Deduction Web App",
+        "role": "Full Stack Developer",
+        "relativeDate": "Oct 2024",
+        "image": "Assets/linkedin-logo.png",
+        "gitLink": "https://github.com/szali172/anonymous-chats-frontend",
+        "description": "An anonymous chatting application where users are placed in random chat rooms within their friends, aiming to guess each other’s identities before the time runs out!",
+        "skills": {
+            "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SignalR", "SQL"],
+            "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Material UI"],
+            "cloud": ["Azure"],
+            "other": ["Auth0", "Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
+        }
+    },
+    {
+        "name" : "Upmeet",
+        "subheading": "Event Finder & Management Web App",
+        "role": "Senior Full Stack Developer",
+        "relativeDate": "Sep 2024",
+        "image": "Assets/linkedin-logo.png",
+        "gitLink": "https://github.com/szali172/upmeet-frontend",
+        "description": "A simple application to find and manage local events. Features interactive event cards with favoriting functionality",
+        "skills": {
+            "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SQL"],
+            "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Bootstrap"],
+            "cloud": [],
+            "other": ["Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
+        }
+    },
+    {
+        "name" : "Study Buddy",
+        "subheading": "Academic & Social Web App",
+        "role": "Lead Back End Developer",
+        "relativeDate": "Fall 2022",
+        "image": "Assets/linkedin-logo.png",
+        "gitLink": "https://github.com/szali172/StudyBuddy",
+        "description": "Connects college students for study sessions, sharing posts and accessing course discussions on Reddit",
+        "skills": {
+            "backend": ["Python", "Flask", "PyMongo", "REST APIs"],
+            "frontend": [],
+            "cloud": ["MongoDB"],
+            "other": ["Git", "GitHub", "Visual Studio Code", "TDD"]
+        }
+    },
+    {
+        "name" : "Connecting Flights",
+        "subheading": "Algorithmic Pathfinding CLI App",
+        "role": "Lead Developer",
+        "relativeDate": "Fall 2021",
+        "image": "Assets/linkedin-logo.png",
+        "gitLink": "https://github.com/szali172/Connecting-Flights",
+        "description": "Applied graph data structures and Dijkstra’s algorithm to compute and visualize the shortest path from a selected airport to all others worldwide",
+        "skills": {
+            "backend": [],
+            "frontend": [],
+            "cloud": [],
+            "other": ["C++ 20", "Git", "GitHub", "Visual Studio Code", "TDD"]
+        }
     }
 ]

@@ -2,14 +2,16 @@
     {
         "name" : "Personal Website",
         "subheading": "Custom Portfolio Website",
-        "role": "Solo Developer",
-        "relativeDate": "Developing since Jul 2024",
+        "role": "Sole Developer",
+        "goal": "Personal Project",
+        "relativeDate": "Since Jul 2024",
         "image": "Assets/linkedin-logo.png",
-        "gitLink": "https://github.com/szali172/personal-website",
-        "description": "Everything you see on this website was handcrafted by yours truly :) I was determined to build this website without any frameworks to display my vanilla skills",
+        "links": ["https://github.com/szali172/personal-website"],
+        "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my vanilla skills",
         "skills": {
             "backend": [],
-            "frontend": ["HTML 5", "CSS 3", "JavaScript"],
+            "frontend": ["HTML 5", "CSS 3", "JavaScript", "Bootstrap"],
+            "middleware": [],
             "cloud": ["AWS"],
             "other": ["Git", "GitHub", "Visual Studio Code"]
         }
@@ -18,28 +20,32 @@
         "name" : "WhoDis?",
         "subheading": "Social Deduction Web App",
         "role": "Full Stack Developer",
+        "goal": "Bootcamp Project",
         "relativeDate": "Oct 2024",
         "image": "Assets/linkedin-logo.png",
-        "gitLink": "https://github.com/szali172/anonymous-chats-frontend",
+        "links": ["https://github.com/szali172/anonymous-chats-frontend"],
         "description": "An anonymous chatting application where users are placed in random chat rooms within their friends, aiming to guess each other’s identities before the time runs out!",
         "skills": {
             "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SignalR", "SQL"],
             "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Material UI"],
+            "middleware": ["Auth0"],
             "cloud": ["Azure"],
-            "other": ["Auth0", "Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
+            "other": ["Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
         }
     },
     {
         "name" : "Upmeet",
         "subheading": "Event Finder & Management Web App",
         "role": "Senior Full Stack Developer",
+        "goal": "Bootcamp Project",
         "relativeDate": "Sep 2024",
         "image": "Assets/linkedin-logo.png",
-        "gitLink": "https://github.com/szali172/upmeet-frontend",
+        "links": ["https://github.com/szali172/upmeet-frontend"],
         "description": "A simple application to find and manage local events. Features interactive event cards with favoriting functionality",
         "skills": {
             "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SQL"],
             "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Bootstrap"],
+            "middleware": [],
             "cloud": [],
             "other": ["Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
         }
@@ -48,13 +54,15 @@
         "name" : "Study Buddy",
         "subheading": "Academic & Social Web App",
         "role": "Lead Back End Developer",
+        "goal": "UIUC Project",
         "relativeDate": "Fall 2022",
         "image": "Assets/linkedin-logo.png",
-        "gitLink": "https://github.com/szali172/StudyBuddy",
+        "links": ["https://github.com/szali172/StudyBuddy"],
         "description": "Connects college students for study sessions, sharing posts and accessing course discussions on Reddit",
         "skills": {
             "backend": ["Python", "Flask", "PyMongo", "REST APIs"],
             "frontend": [],
+            "middleware": [],
             "cloud": ["MongoDB"],
             "other": ["Git", "GitHub", "Visual Studio Code", "TDD"]
         }
@@ -63,13 +71,15 @@
         "name" : "Connecting Flights",
         "subheading": "Algorithmic Pathfinding CLI App",
         "role": "Lead Developer",
+        "goal": "UIUC Project",
         "relativeDate": "Fall 2021",
         "image": "Assets/linkedin-logo.png",
-        "gitLink": "https://github.com/szali172/Connecting-Flights",
+        "links": ["https://github.com/szali172/Connecting-Flights"],
         "description": "Applied graph data structures and Dijkstra’s algorithm to compute and visualize the shortest path from a selected airport to all others worldwide",
         "skills": {
             "backend": [],
             "frontend": [],
+            "middleware": [],
             "cloud": [],
             "other": ["C++ 20", "Git", "GitHub", "Visual Studio Code", "TDD"]
         }

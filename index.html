@@ -269,7 +269,7 @@
           href="#first-section"
           onclick="timeoutButton(this);"
         >
-          Objective
+          Welcome!
         </a>
 
         <a
@@ -310,11 +310,11 @@
         </a>
       </div>
 
-      <!-- Objective -->
+      <!-- Welcome -->
       <section id="first-section" class="row">
         <div class="col-sm-1 col-1"></div>
         <div class="text hidden-left col-5 col-sm-5">
-          <h3 class="section-header-left">Objective</h3>
+          <h3 class="section-header-left">Backstory</h3>
           <p>
             I'm a Full Stack Developer with tons of experience in Python, C#,
             React, and more... In 2023, I graduated from University of
@@ -363,11 +363,29 @@
           </button>
         </div>
 
-        <div id="project-details" class="hidden-right col-sm-5 col-5" style="overflow: visible;">
+        <div id="project-details" class="hidden-right col-sm-5 col-5">
           <h3 class="section-header-right" style="transform: translateY(-120%);">Projects</h3>
-          <h2 id="project-title"></h2>
-          <p id="project-description"></p>
-          <div id="project-skills"></div>
+          <div id="project-details-header">
+            <h2 id="project-title"></h2>
+            <h4 id="project-subheading"></h4>
+            <hr id="project-separator">
+          </div>
+          <div id="project-details-inner">
+            <div id="project-details-inner-header">
+              <div id="project-role" class="project-tidbit"></div>
+              <div id="project-date" class="project-tidbit"></div>
+            </div>
+            <div id="project-goal" class="project-tidbit"></div>
+            <p id="project-description"></p>
+            <svg id="project-links-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-share project-tidbit" viewBox="0 0 16 16">
+              <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+            </svg>
+            <div id="project-links"></div>
+            <svg id="project-skills-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-code-slash project-tidbit" viewBox="0 0 16 16">
+              <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+            </svg>
+            <div id="project-skills"></div>
+          </div>
         </div>
         <div class="col-sm-1 col-1"></div>
       </section>

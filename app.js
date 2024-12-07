@@ -267,25 +267,3 @@ icons.forEach(button => {
     }
   });
 });
-
-
-
-
-// customElements.define("my-el", class extends HTMLElement {
-//   constructor() {
-//     super().attachShadow({mode:"open"}).innerHTML=`<a></a>`;
-//     this.a = this.shadowRoot.querySelector("a");
-//   }
-  
-//   set myText(v) {
-//     this.a.textContent = v;
-//     this.a.style = "color: white";
-//   }
-// });
-
-// const frag = new DocumentFragment();
-// const el = document.createElement("my-el");
-// frag.append(el);
-// el.myText = "abc"; 
-
-// document.body.append(frag);

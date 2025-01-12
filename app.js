@@ -22,10 +22,9 @@ animateFavicon();
 function setArrowOptions(section) {
   if (sections.includes(section)) {
     const currIdx = sections.indexOf(section);
-
     const prevOption = currIdx - 1 < 0 ? 0 : currIdx - 1;
     const nextOption =
-      currIdx + 1 >= sections.length ? sections.length - 1 : currIdx + 1;
+      currIdx + 1 >= sections.length ? 1 : currIdx + 1;
 
     document
       .getElementById("arrow-up")
@@ -61,7 +60,11 @@ function updateTabIndexes(elementsInView, elementsOutOfView) {
 
   // Reset tabIndex for elements now out of the view
   for (let i = 0; i < elementsOutOfView.length; i++) {
-    document.getElementById(elementsOutOfView[i]).tabIndex = -1;
+    try{
+      document.getElementById(elementsOutOfView[i]).tabIndex = -1;
+    } catch {
+      console.log(elementsOutOfView[i])
+    }
   }
 }
 
@@ -80,7 +83,8 @@ function createIntroWaypoint(section) {
   const introTabbedElementsIds = ["btn-outline-to-home"];
   const mainTabbedElementsIds = ["git-icon", "resume-icon", "contact-me-button",
                                  "arrow-up", "first-section-tab", "second-section-tab", 
-                                 "third-section-tab", "arrow-down"];
+                                 "third-section-tab", "fourth-section-tab", 
+                                 "fifth-section-tab", "arrow-down"];
 
   function enterIntroSection() {
     tabsContainer.classList.remove("show-tabs");
@@ -96,18 +100,20 @@ function createIntroWaypoint(section) {
     updateTabIndexes(mainTabbedElementsIds, introTabbedElementsIds);
   }
 
-  new Waypoint.Inview({
-    element: document.getElementById(section),
-    enter: function () {
-      enterIntroSection();
-    },
-    entered: function () {
-      enterIntroSection();
-    },
-    exited: function () {
-      exitIntroSection();
-    },
-  });
+  try {
+    new Waypoint.Inview({
+      element: document.getElementById(section),
+      enter: function () {
+        enterIntroSection();
+      },
+      entered: function () {
+        enterIntroSection();
+      },
+      exited: function () {
+        exitIntroSection();
+      },
+    });
+  } catch { }
 }
 
 
@@ -146,22 +152,25 @@ function exitSection(element, pics) {
 }
 
 function createSectionWaypoint(section, pics) {
-  new Waypoint.Inview({
-    element: document.getElementById(section),
-    enter: function () {
-      enterSection(this.element, section, pics);
-    },
-    entered: function () {
-      enterSection(this.element, section, pics);
-    },
-    exited: function () {
-      exitSection(this.element, pics);
-    },
-  });
+  try {
+    new Waypoint.Inview({
+      element: document.getElementById(section),
+      enter: function () {
+        enterSection(this.element, section, pics);
+      },
+      entered: function () {
+        enterSection(this.element, section, pics);
+      },
+      exited: function () {
+        exitSection(this.element, pics);
+      },
+    });
+  } catch { }
+  
 }
 
 const tabs = document.querySelectorAll(".tab");
-const sections = ["intro", "first-section", "second-section", "third-section"];
+const sections = ["intro", "first-section", "second-section", "third-section", "fourth-section", "fifth-section"];
 const pictures = {"first-section": ['pic-one', 'pic-two', 'pic-three'],}
 
 // Create waypoints for each section

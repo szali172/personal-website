@@ -43,9 +43,6 @@
   </head>
 
   <body class="preload">
-    <script>
-      0;
-    </script>
     <div class="body-container" tabindex="-1">
       <!-- Introduction -->
       <div id="intro">
@@ -269,7 +266,7 @@
           href="#first-section"
           onclick="timeoutButton(this);"
         >
-          Welcome!
+          Backstory
         </a>
 
         <a
@@ -277,13 +274,29 @@
           class="btn tab unselected-tab"
           href="#second-section"
           onclick="timeoutButton(this);"
-          >Projects</a
+          >Education</a
         >
 
         <a
           id="third-section-tab"
           class="btn tab unselected-tab"
           href="#third-section"
+          onclick="timeoutButton(this);"
+          >Experience</a
+        >
+
+        <a
+          id="fourth-section-tab"
+          class="btn tab unselected-tab"
+          href="#fourth-section"
+          onclick="timeoutButton(this);"
+          >Projects</a
+        >
+
+        <a
+          id="fifth-section-tab"
+          class="btn tab unselected-tab"
+          href="#fifth-section"
           onclick="timeoutButton(this);"
           >Music</a
         >
@@ -314,7 +327,7 @@
       <section id="first-section" class="row">
         <div class="col-sm-1 col-1"></div>
         <div class="text hidden-left col-5 col-sm-5">
-          <h3 class="section-header-left">Backstory</h3>
+          <h3 class="section-header-left">the lore...</h3>
           <p>
             I'm a Full Stack Developer with tons of experience in Python, C#,
             React, and more... In 2023, I graduated from University of
@@ -348,8 +361,55 @@
         <div class="col-sm-1 col-1"></div>
       </section>
 
+      <!-- Education -->
+      <section id="second-section">
+        <div class="hidden-right">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 col-6"></div>
+            <h3 class="section-header-right">Education</h3>
+            <p class="col-sm-5 col-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="third-section" class="row">
+        <div class="col-sm-1 col-1"></div>
+        <div class="text hidden-left col-5 col-sm-5">
+          <h3 class="section-header-left">Experience</h3>
+          <p>
+            I'm a Full Stack Developer with tons of experience in Python, C#,
+            React, and more... In 2023, I graduated from University of
+            Illinois Urbana-Champaign with a degree in Computer Science +
+            Linguistics so I could strive for a career towards AI. Turns out I
+            didn't quite enjoy it as much as I wanted to... On the other hand,
+            I picked up a passion for building applications of all shapes and
+            sizes.
+          </p>
+          <p>
+            In 2024, I found an online bootcamp during my job searching where
+            I began learning about C#, .NET, SQL, and so much more. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="col-sm-6 col-6"></div>
+      </section>
+
       <!-- Projects -->
-      <section id="second-section" class="row">
+      <section id="fourth-section" class="row">
         <div class="col-sm-1 col-1"></div>
         <div id="projects-carousel" class="carousel slide col-sm-5 col-5 hidden-right" data-touch="true">
           <div id="carousel-inner" class="carousel-inner"></div>
@@ -391,26 +451,33 @@
       </section>
 
       <!-- Music -->
-      <section id="third-section">
-        <div class="hidden-left">
+      <section id="fifth-section" class="row">
+        <div class="col-sm-1 col-1"></div>
+        <div class="text hidden-left col-5 col-sm-5">
           <h3 class="section-header-left">Music</h3>
+          <p>
+            I'm a Full Stack Developer with tons of experience in Python, C#,
+            React, and more... In 2023, I graduated from University of
+            Illinois Urbana-Champaign with a degree in Computer Science +
+            Linguistics so I could strive for a career towards AI. Turns out I
+            didn't quite enjoy it as much as I wanted to... On the other hand,
+            I picked up a passion for building applications of all shapes and
+            sizes.
+          </p>
+          <p>
+            In 2024, I found an online bootcamp during my job searching where
+            I began learning about C#, .NET, SQL, and so much more. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="col-sm-6 col-6"></div>
           <div class="row">
-            <div class="col-sm-2"></div>
-            <p class="col-sm-4 col-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <div class="col-sm-4"></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
 
-            <a id="spotify-playlist" class="col-sm-4 col-6">
+            <a id="spotify-playlist" class="col-sm-5 col-6">
               <img id="playlist-img" src="" alt="Playlist Image" />
 
               <div id="playlist-info">
@@ -434,15 +501,14 @@
                 />
               </svg>
             </a>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-5"></div>
           </div>
         </div>
       </section>
     </div>
     <footer>
       <span>
-        This website was made from scratch solely by me using HTML 5, CSS 3 and
-        JavaScript!
+        This website was made from scratch solely by me using HTML, CSS, JavaScript and Bootstrap!
       </span>
     </footer>
   </body>

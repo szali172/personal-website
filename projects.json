@@ -1,13 +1,13 @@
 [
     {
-        "name" : "Personal Website",
+        "name" : "Personal Website 🖼",
         "subheading": "Custom Portfolio Website",
         "role": "Sole Developer",
         "goal": "Personal Project",
         "relativeDate": "Since Jul 2024",
         "image": "Assets/linkedin-logo.png",
-        "links": ["https://github.com/szali172/personal-website"],
-        "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my vanilla skills",
+        "links": ["http://127.0.0.1:5500/index.html", "https://github.com/szali172/personal-website"],
+        "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my vanilla skills 🍦",
         "skills": {
             "backend": [],
             "frontend": ["HTML 5", "CSS 3", "JavaScript", "Bootstrap"],
@@ -17,7 +17,7 @@
         }
     },
     {
-        "name" : "WhoDis?",
+        "name" : "WhoDis? 🎭",
         "subheading": "Social Deduction Web App",
         "role": "Full Stack Developer",
         "goal": "Bootcamp Project",
@@ -34,7 +34,7 @@
         }
     },
     {
-        "name" : "Upmeet",
+        "name" : "Upmeet 📆",
         "subheading": "Event Finder & Management Web App",
         "role": "Senior Full Stack Developer",
         "goal": "Bootcamp Project",
@@ -51,7 +51,7 @@
         }
     },
     {
-        "name" : "Study Buddy",
+        "name" : "Study Buddy 📚",
         "subheading": "Academic & Social Web App",
         "role": "Lead Back End Developer",
         "goal": "UIUC Project",
@@ -68,7 +68,7 @@
         }
     },
     {
-        "name" : "Connecting Flights",
+        "name" : "Connecting Flights 🛫",
         "subheading": "Algorithmic Pathfinding CLI App",
         "role": "Lead Developer",
         "goal": "UIUC Project",

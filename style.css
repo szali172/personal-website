@@ -47,6 +47,7 @@ section {
   /* border: 2px solid blue; */
 
   min-height: 100vh;
+  height: fit-content;
   margin: 20vh 20px;
   padding: 10vh 0;
   font-size: max(0.5rem, 1.2vmax);
@@ -64,6 +65,7 @@ footer {
   color: var(--secondary-accent-color);
   font-family: var(--font-main);
   font-size: 1.2vmax;
+  text-align: center;
   box-shadow: 0px 10px 20px 5px black;
   padding: 2vmax 0;
 }
@@ -240,101 +242,96 @@ footer {
 
 
 
-/* Music */
-#spotify-playlist {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 0.5em;
-
-  border-radius: 0.8vmax;
-  text-decoration: none;
-  background: linear-gradient(180deg, #1ebc55, #271f1f);
-  box-shadow: 0px 0px 10px 0px #0a2b15, inset 0px 0px 10px 0px #0a2b15;
-  width: fit-content;
-  height: fit-content;
-  overflow: auto;
-  margin: 10px 0px 10px 15px;
-  padding: 0.6em;
-  transition: ease all 0.5s;
+/* Experiences */
+#experience-container {
+  border-radius: 1vmax;
+  padding: 4vmax 3vmax;
 }
 
-#playlist-img {
-  place-self: center;
-  box-shadow: 0px 0px 0.8vmax 0.1vmax black;
-  border-radius: 0.5vmax;
-  width: 3em;
-  height: 3em;
-  color: white;
-  transition: ease-in-out all 0.3s;
+#accordion-group {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5vmax;
 }
 
-#playlist-info {
+.accordion-header {
+  background-color: var(--primary-color);
+  border: 0;
+}
+
+.accordion-button {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
   justify-content: space-between;
-  gap: 0px;
-  place-self: center;
-  overflow: hidden;
-  width: fit-content;
-  
+  width: 100%;
+  padding: 1rem;
+  color: rgb(226, 226, 226);
+  transition: ease all 0.2s;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--secondary-color);
   color: white;
-  margin: 0;
-  padding: 0;
-  transition: ease all 0.3s;
+  transition: ease-out 0.3s;
 }
 
-#playlist-top-row {
-  transition: ease all 0.3s;
+.accordion-button:focus { /* Remove the focus outline */
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
 }
 
-#playlist-name {
-  width: fit-content;
-  font-size: 1.5vmax;
-}
-
-#playlist-tag {
-  width: auto;
-  font-size: 0.8vmax;
-  color: rgb(175, 175, 175);
-  padding: 0 6px 0 0;
-}
-
-#playlist-subheading {
-  color: rgba(185, 255, 243, 0.941);
-  font-size: 0.8vmax;
-  white-space: nowrap;
-  animation: scrolling-text 6s linear infinite;
-}
-
-.bi-spotify {
-  place-self: center;
-  margin: 0 0 0 2em;
-  transition: ease-in-out all 0.3s;
-}
-
-#spotify-playlist:hover {
-  translate: 0 -2px;
+.accordion-button:hover {
+  background-color: red;
+  color: whitesmoke;
   transition: ease all 0.5s;
 }
 
-#spotify-playlist:hover #playlist-img {
-  scale: 95%;
-  transition: ease-in-out all 0.3s;
+.accordion-button:not(.collapsed):hover {
+  background-color: var(--secondary-color);
 }
 
-#spotify-playlist:hover #playlist-top-row {
-  translate: 6px 0;
-  color: rgb(35, 210, 169);
-  transition: ease all 0.3s;
+.accordion-item {
+  background-color: var(--primary-color);
+  border: 0;
 }
 
-#spotify-playlist:hover .bi-spotify {
-  translate: 0 -2px;
-  fill: rgb(35, 210, 169);
-  transition: ease-in-out all 0.3s;
+.accordion-item-header {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5vmax;
+  width: 100%;
 }
 
+.accordion-item-header-top-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.accordion-item-company {
+  display: flex;
+  align-items: center;
+  gap: 0.5vmax;
+  width: auto;
+}
+
+.accordion-item-company-img {
+  width: 2vmax;
+  height: 2vmax;
+}
+
+.accordion-body {
+  color: whitesmoke;
+  border-radius: 0 0 1vmax 1vmax;
+}
+
+.bullet-points {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1vmax;
+}
 
 
 /* Projects */
@@ -592,6 +589,103 @@ footer {
 
 .other-skill {
   background: gray;
+}
+
+
+
+/* Music */
+#spotify-playlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.5em;
+
+  border-radius: 0.8vmax;
+  text-decoration: none;
+  background: linear-gradient(180deg, #1ebc55, #271f1f);
+  box-shadow: 0px 0px 10px 0px #0a2b15, inset 0px 0px 10px 0px #0a2b15;
+  width: fit-content;
+  height: fit-content;
+  overflow: auto;
+  margin: 10px 0px 10px 15px;
+  padding: 0.6em;
+  transition: ease all 0.5s;
+}
+
+#playlist-img {
+  place-self: center;
+  box-shadow: 0px 0px 0.8vmax 0.1vmax black;
+  border-radius: 0.5vmax;
+  width: 3em;
+  height: 3em;
+  color: white;
+  transition: ease-in-out all 0.3s;
+}
+
+#playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0px;
+  place-self: center;
+  overflow: hidden;
+  width: fit-content;
+  
+  color: white;
+  margin: 0;
+  padding: 0;
+  transition: ease all 0.3s;
+}
+
+#playlist-top-row {
+  transition: ease all 0.3s;
+}
+
+#playlist-name {
+  width: fit-content;
+  font-size: 1.5vmax;
+}
+
+#playlist-tag {
+  width: auto;
+  font-size: 0.8vmax;
+  color: rgb(175, 175, 175);
+  padding: 0 6px 0 0;
+}
+
+#playlist-subheading {
+  color: rgba(185, 255, 243, 0.941);
+  font-size: 0.8vmax;
+  white-space: nowrap;
+  animation: scrolling-text 6s linear infinite;
+}
+
+.bi-spotify {
+  place-self: center;
+  margin: 0 0 0 2em;
+  transition: ease-in-out all 0.3s;
+}
+
+#spotify-playlist:hover {
+  translate: 0 -2px;
+  transition: ease all 0.5s;
+}
+
+#spotify-playlist:hover #playlist-img {
+  scale: 95%;
+  transition: ease-in-out all 0.3s;
+}
+
+#spotify-playlist:hover #playlist-top-row {
+  translate: 6px 0;
+  color: rgb(35, 210, 169);
+  transition: ease all 0.3s;
+}
+
+#spotify-playlist:hover .bi-spotify {
+  translate: 0 -2px;
+  fill: rgb(35, 210, 169);
+  transition: ease-in-out all 0.3s;
 }
 
 

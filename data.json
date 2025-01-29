@@ -1,0 +1,135 @@
+{
+    "experiences": 
+    [
+        {
+            "title": "Front End Developer/IT Specialist",
+            "company": "USGS",
+            "logo": "Assets/company_logos/usgs-logo.png",
+            "color": "#00843d",
+            "location": "Urbana, IL",
+            "date": "Sep 2022 – Aug 2024",
+            "points": [
+                "Independently constructed a Graphical User Interface from the ground up using Python’s Tkinter library to integrate existing hydrology scripts into a cohesive experience, improving usability and workflow",
+                "Facilitated biweekly meetings with the client to demo new interface updates, gather feedback, and implement enhancements ensuring alignment with user requirements and preferences",
+                "Established the branch’s first Windows bare metal server, hosting two VMs configured to multiple networks to manage local phone and door operations, optimizing server resources and reducing server footprint"
+            ],
+            "skills": ["Java", "Spring Boot", "React", "Git"]
+        },
+        {
+            "title": "Web Developer",
+            "company": "ASL Aspire Inc",
+            "logo": "Assets/company_logos/asl-aspire-logo.png",
+            "color": "#41b8d4",
+            "location": "Champaign, IL",
+            "date": "Jun 2022 – Jul 2023",
+            "points": [
+                "Played a key role in the company’s early-stage development, contributing to the creation of scalable web applications in a dynamic startup environment",
+                "Developed and implemented multiple pages, including class overview and assignments for a teacher dashboard using React, providing comprehensive analytics to support classroom teaching",
+                "Designed the SQL database structure and formulated REST API queries to retrieve data for dashboard integration"
+            ],
+            "skills": ["Java", "Spring Boot", "React", "Git"]
+        },
+        {
+            "title": "CS 124 Course Associate",
+            "company": "UIUC",
+            "logo": "Assets/company_logos/uiuc-logo.png",
+            "color": "#13294B",
+            "location": "Remote",
+            "date": "Jan 2021 – Sep 2022",
+            "points": [
+                "Created detailed course content including code solutions, logic explanations and lesson videos for both Java and Kotlin sections of CS 124",
+                "Provided personalized tutoring to students through office hours and the course forum, addressing questions and clarifying concepts",
+                "Organized and led weekly quiz preparation and Even More Practice sessions for over 300 students across both Java and Kotlin sections"
+            ],
+            "skills": ["Java", "Spring Boot", "React", "Git"]
+        }
+    ],
+    "projects": 
+    [
+        {
+            "name" : "Personal Website 🖼",
+            "subheading": "Custom Portfolio Website",
+            "role": "Sole Developer",
+            "goal": "Personal Project",
+            "relativeDate": "Since Jul 2024",
+            "image": "Assets/linkedin-logo.png",
+            "links": ["http://127.0.0.1:5500/index.html", "https://github.com/szali172/personal-website"],
+            "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my vanilla skills 🍦",
+            "skills": {
+                "backend": [],
+                "frontend": ["HTML 5", "CSS 3", "JavaScript", "Bootstrap"],
+                "middleware": [],
+                "cloud": ["AWS"],
+                "other": ["Git", "GitHub", "Visual Studio Code"]
+            }
+        },
+        {
+            "name" : "WhoDis? 🎭",
+            "subheading": "Social Deduction Web App",
+            "role": "Full Stack Developer",
+            "goal": "Bootcamp Project",
+            "relativeDate": "Oct 2024",
+            "image": "Assets/linkedin-logo.png",
+            "links": ["https://github.com/szali172/anonymous-chats-frontend"],
+            "description": "An anonymous chatting application where users are placed in random chat rooms within their friends, aiming to guess each other’s identities before the time runs out!",
+            "skills": {
+                "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SignalR", "SQL"],
+                "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Material UI"],
+                "middleware": ["Auth0"],
+                "cloud": ["Azure"],
+                "other": ["Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
+            }
+        },
+        {
+            "name" : "Upmeet 📆",
+            "subheading": "Event Finder & Management Web App",
+            "role": "Senior Full Stack Developer",
+            "goal": "Bootcamp Project",
+            "relativeDate": "Sep 2024",
+            "image": "Assets/linkedin-logo.png",
+            "links": ["https://github.com/szali172/upmeet-frontend"],
+            "description": "A simple application to find and manage local events. Features interactive event cards with favoriting functionality",
+            "skills": {
+                "backend": ["C#", ".NET 8", "ASP.NET Web API", "Entity Framework", "REST APIs", "LINQ", "SQL"],
+                "frontend": ["Angular 17+", "TypeScript", "HTML 5", "CSS 3", "Bootstrap"],
+                "middleware": [],
+                "cloud": [],
+                "other": ["Git", "GitHub", "Visual Studio", "Visual Studio Code", "Agile"]
+            }
+        },
+        {
+            "name" : "Study Buddy 📚",
+            "subheading": "Academic & Social Web App",
+            "role": "Lead Back End Developer",
+            "goal": "UIUC Project",
+            "relativeDate": "Fall 2022",
+            "image": "Assets/linkedin-logo.png",
+            "links": ["https://github.com/szali172/StudyBuddy"],
+            "description": "Connects college students for study sessions, sharing posts and accessing course discussions on Reddit",
+            "skills": {
+                "backend": ["Python", "Flask", "PyMongo", "REST APIs"],
+                "frontend": [],
+                "middleware": [],
+                "cloud": ["MongoDB"],
+                "other": ["Git", "GitHub", "Visual Studio Code", "TDD"]
+            }
+        },
+        {
+            "name" : "Connecting Flights 🛫",
+            "subheading": "Algorithmic Pathfinding CLI App",
+            "role": "Lead Developer",
+            "goal": "UIUC Project",
+            "relativeDate": "Fall 2021",
+            "image": "Assets/linkedin-logo.png",
+            "links": ["https://github.com/szali172/Connecting-Flights"],
+            "description": "Applied graph data structures and Dijkstra’s algorithm to compute and visualize the shortest path from a selected airport to all others worldwide",
+            "skills": {
+                "backend": [],
+                "frontend": [],
+                "middleware": [],
+                "cloud": [],
+                "other": ["C++ 20", "Git", "GitHub", "Visual Studio Code", "TDD"]
+            }
+        }
+    ]
+}

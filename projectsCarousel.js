@@ -1,12 +1,18 @@
 async function loadProjects() {
-    const response = await fetch('projects.json');
-    const projects = await response.json();
-    return projects;
+    const response = await fetch('data.json');
+    return await response.json()
+    .then(data => { 
+      return data['projects'];
+    })
+    .catch(error => {
+      console.error("Failed to load projects");
+      return [];
+    });
 }
 
 
 
-function createCarouselItem(project, index) {
+function createCarouselItems(project, index) {
     const item = document.createElement('div');
     item.classList.add('carousel-item');
     if (index === 0) item.classList.add('active');  // Make the first item active
@@ -16,7 +22,13 @@ function createCarouselItem(project, index) {
         <img src="${project.image}" alt="${project.name}">
       </div>
       `;
-    return item;
+      
+    const indicator = document.createElement('button');
+    indicator.setAttribute('data-bs-target', '#projects-carousel');
+    indicator.setAttribute('data-bs-slide-to', index);
+    (index == 0) ? indicator.classList.add('active') : null;
+
+    return [item, indicator];
 }
   
 
@@ -107,18 +119,20 @@ function displayProjectDetails(project) {
 
 
 async function initializeCarousel() {
-    const projects = await loadProjects();
-    const carouselInner = document.getElementById('carousel-inner');
-  
-    projects.forEach((project, index) => {
-      const item = createCarouselItem(project, index);
+    let projects = await loadProjects();
+    const carousel = document.getElementById('projects-carousel');
+    const indicators = carousel.querySelector('.carousel-indicators');
+    const carouselInner = carousel.querySelector('.carousel-inner');
+
+    projects.forEach(async (project,index) => {
+      let [item, indicator] = await createCarouselItems(project, index);
       carouselInner.appendChild(item);
+      indicators.appendChild(indicator);
     });
   
     if (projects.length > 0) displayProjectDetails(projects[0]);
   
     // Update project details on carousel slide
-    const carousel = document.getElementById('projects-carousel');
     carousel.addEventListener('slide.bs.carousel', (event) => {
       const nextIndex = event.to;
       displayProjectDetails(projects[nextIndex]);

@@ -40,6 +40,7 @@
     <script defer src="app.js"></script>
     <script defer type="module" src="services.js"></script>
     <script defer type="module" src="projectsCarousel.js"></script>
+    <script defer type="module" src="experienceList.js"></script>
   </head>
 
   <body class="preload">
@@ -384,35 +385,20 @@
 
       <!-- Experience -->
       <section id="third-section" class="row">
-        <div class="col-sm-1 col-1"></div>
-        <div class="text hidden-left col-5 col-sm-5">
+        <div class="text hidden-left col-9 col-sm-9">
           <h3 class="section-header-left">Experience</h3>
-          <p>
-            I'm a Full Stack Developer with tons of experience in Python, C#,
-            React, and more... In 2023, I graduated from University of
-            Illinois Urbana-Champaign with a degree in Computer Science +
-            Linguistics so I could strive for a career towards AI. Turns out I
-            didn't quite enjoy it as much as I wanted to... On the other hand,
-            I picked up a passion for building applications of all shapes and
-            sizes.
-          </p>
-          <p>
-            In 2024, I found an online bootcamp during my job searching where
-            I began learning about C#, .NET, SQL, and so much more. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <div id="experience-container">
+          </div>
         </div>
-        <div class="col-sm-6 col-6"></div>
       </section>
 
       <!-- Projects -->
       <section id="fourth-section" class="row">
         <div class="col-sm-1 col-1"></div>
         <div id="projects-carousel" class="carousel slide col-sm-5 col-5 hidden-right" data-touch="true">
-          <div id="carousel-inner" class="carousel-inner"></div>
+          <ol class="carousel-indicators">
+          </ol>
+          <div class="carousel-inner"></div>
           <button class="carousel-control-prev" type="button" data-bs-target="#projects-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -507,9 +493,12 @@
       </section>
     </div>
     <footer>
-      <span>
-        This website was made from scratch solely by me using HTML, CSS, JavaScript and Bootstrap!
-      </span>
+      <p>
+        This website was made from scratch solely by yours truly using HTML, CSS, JavaScript and Bootstrap!
+        <br>
+        <br>
+        Did you notice the little spinning astronaut? 🧑‍🚀
+      </p>
     </footer>
   </body>
 </html>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap');
 
 /* Tags and General Classes */
 /* * {
@@ -43,12 +44,12 @@ section {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   /* border: 2px solid blue; */
 
   min-height: 100vh;
   height: fit-content;
-  margin: 20vh 20px;
+  margin: 20vh 2vw;
   padding: 10vh 0;
   font-size: max(0.5rem, 1.2vmax);
   overflow: visible;
@@ -67,24 +68,22 @@ footer {
   font-size: 1.2vmax;
   text-align: center;
   box-shadow: 0px 10px 20px 5px black;
-  padding: 2vmax 0;
+  padding: 3vmax 0 2vmax 0;
 }
 
 .text {
   height: fit-content;
 }
 
-.section-header-left {
+.section-header {
   /* opacity: 0;
   filter: opacity(0%) blur(1px); */
+  margin: 1vmax 0;
   transition: ease-out all 0.1s;
 }
 
 .section-header-right {
-  /* opacity: 0;
-  filter: opacity(0%) blur(1px); */
   text-align: end;
-  transition: ease-out all 0.1s;
 }
 
 .btn {
@@ -118,7 +117,8 @@ footer {
   place-items: center;
   align-content: center;
   height: 100vh;
-  margin: 0px 10vw 40vh 10vw;
+  margin-top: 0;
+  margin-bottom: max(20rem, 20vmax);
 }
 
 
@@ -245,7 +245,7 @@ footer {
 /* Experiences */
 #experience-container {
   border-radius: 1vmax;
-  padding: 4vmax 3vmax;
+  padding: 0 3vmax 1vmax 3vmax;
 }
 
 #accordion-group {
@@ -288,6 +288,7 @@ footer {
 
 .accordion-button:not(.collapsed):hover {
   background-color: var(--secondary-color);
+  animation: moveBackground 2s linear infinite;
 }
 
 .accordion-item {
@@ -296,30 +297,84 @@ footer {
 }
 
 .accordion-item-header {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.5vmax;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 1vmax 0.5vmax;
   width: 100%;
+  color: rgba(226, 226, 226, 0.501);
+  margin: 1vmax 1vmax;
 }
 
-.accordion-item-header-top-row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.accordion-item-title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: clamp(1.2rem, 2vmax, 1.8rem);
+  font-family: "Nunito Sans", serif;
+  font-weight: 250;
+  letter-spacing: 0.15rem;
+  text-wrap: wrap;
+  transition: ease all 0.2s;
+}
+
+.accordion-item-date {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: clamp(0.8rem, 1vmax, 1.2rem);
+  font-family: "Nunito Sans", serif;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  text-wrap: nowrap;
+  transition: ease all 0.2s;
 }
 
 .accordion-item-company {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
   align-items: center;
   gap: 0.5vmax;
-  width: auto;
+  transition: ease all 0.2s;
+}
+
+.accordion-item-company-name {
+  color: rgba(226, 226, 226, 0.75);
+  font-size: clamp(0.8rem, 1.6vmax, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-wrap: nowrap;
+  transition: ease all 0.2s;
 }
 
 .accordion-item-company-img {
-  width: 2vmax;
-  height: 2vmax;
+  width: clamp(0.8rem, 2vmax, 2rem);
+  height: clamp(0.8rem, 2vmax, 2rem);
+}
+
+@media (max-width: 768px) {
+  .accordion-item-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .accordion-item-company {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .accordion-item-date {
+    grid-row: 3;
+  }
+}
+
+.accordion-button:hover .accordion-item-title,
+.accordion-button:hover .accordion-item-company-name,
+.accordion-button:hover .accordion-item-date,
+.accordion-button:not(.collapsed) .accordion-item-title,
+.accordion-button:not(.collapsed) .accordion-item-company-name,
+.accordion-button:not(.collapsed) .accordion-item-date {
+  color: whitesmoke;
+  transition: ease all 0.2s;
 }
 
 .accordion-body {
@@ -362,7 +417,7 @@ footer {
   border-radius: 1vmax;
   height: calc(max(30rem, 30vmax) - 0.5vmax);
   transform: translateX(-10%);
-  padding: 0 1vmax 1.5vmax 5%;
+  padding: 1.5vmax 1vmax 1.5vmax 5%;
   transition: opacity 0.5s ease;
   transition-delay: 800ms;
 }
@@ -414,9 +469,9 @@ footer {
   margin-bottom: 1vmax;
 }
 
-.project-tidbit > svg, #project-skills-icon, #project-links-icon, .project-link-icon {
+.project-tidbit > svg, .project-link-icon {
   width: max(1.5rem, 2vmax);
-  height: max(1.2rem, 2vmax);
+  height: max(1.5rem, 2vmax);
   padding-right: 0.5vmax;
 }
 
@@ -426,7 +481,7 @@ footer {
 
 #project-description {
   color: rgb(253, 255, 240);
-  font-size: max(0.5rem, 1.2vmax);
+  font-size: max(0.5rem, 1vmax);
   text-align: justify;
   text-justify: auto;
   padding-right: 1vmax;
@@ -437,7 +492,7 @@ footer {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
-  margin: 1vmax 1vmax 2vmax 1vmax;
+  margin-bottom: 2vmax;
 }
  
 .project-link {
@@ -455,8 +510,8 @@ footer {
   width: fit-content;
   height: fit-content;
   padding: 0.7vmax;
-  transform: scale(0.9);
-  transition: ease-in all 0.5s;
+  transform: scale(0.8);
+  transition: ease-in all 0.3s;
 }
 
 .project-link::before {
@@ -526,6 +581,7 @@ footer {
 
 .project-link:hover {
   transform: translateY(-10%);
+  scale: 0.9;
   box-shadow: -0.4vmax 0.5vmax 0.2vmax 0.2vmax rgba(51, 51, 51, 0.397);
   transition: ease all 0.3s;
 }
@@ -534,8 +590,49 @@ footer {
   z-index: 2;
 }
 
-#project-skills-icon, #project-links-icon {
-  margin-bottom: 0 !important; /* Override previously applied margin styling */
+#to-project-skills-button {
+  margin-top: auto;
+}
+
+#to-project-details-button {
+  margin-bottom: auto;
+}
+
+.skills-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.skills-button-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vmax;
+  min-width: 12vw;
+  color: gainsboro;
+  fill: gainsboro;
+  font-size: 1px;
+  cursor: pointer;
+  transition: ease all 0.2s;
+}
+
+.skills-button-text {
+  font-size: max(0.25rem, 0.9vmax);
+}
+
+.skills-arrow {
+  width: max(0.25rem, 0.9vmax);
+  height: max(0.25rem, 0.9vmax);
+}
+
+.skills-button-inner:hover {
+  color: whitesmoke;
+  fill: whitesmoke;
+  transition: ease all 0.2s;
 }
 
 #project-skills {
@@ -944,7 +1041,6 @@ footer {
     background-position: 100% 50%;
   }
 }
-
 
 /* Letter by letter animation */
 @keyframes typing {

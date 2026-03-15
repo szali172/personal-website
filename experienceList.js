@@ -61,12 +61,10 @@ async function initializeExperiences() {
           <h2 class="accordion-header" id="heading-${sanitizedTitle}">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${sanitizedTitle}" aria-expanded="false" aria-controls="collapse-${sanitizedTitle}">
               <div class="accordion-item-header">
-                <div class="accordion-item-header-top-row">
-                  <div class="accordion-item-title">${experience.title}</div>
-                  <div class="accordion-item-company">
-                    <span>${experience.company}</span>
-                    <img class="accordion-item-company-img" src="${experience.logo}" alt=""/>
-                  </div>
+                <div class="accordion-item-title">${experience.title}</div>
+                <div class="accordion-item-company">
+                  <span class="accordion-item-company-name">${experience.company}</span>
+                  <img class="accordion-item-company-img" src="${experience.logo}" alt="">
                 </div>
                 <div class="accordion-item-date">${experience.date}</div>
               </div>
@@ -78,12 +76,12 @@ async function initializeExperiences() {
             </div>
           </div>
         </div>
-        `;console.log(experience.logo)
+        `;
 
         // Set dynamic background color for each experience
-        const backgroundColor = `linear-gradient(90deg, ${addAlpha(experience.color, 0.4)} 0%, ${experience.color} 60%)`;
-        expItem.querySelector('.accordion-button').style.background = backgroundColor;
-        expItem.querySelector('.accordion-body').style.background = backgroundColor;
+        const background = `linear-gradient(90deg, ${addAlpha(experience.color, 0.4)} 0%, ${experience.color} 60%)`;
+        expItem.querySelector('.accordion-button').style.background = background;
+        expItem.querySelector('.accordion-body').style.background = background;
 
         accordionGroup.appendChild(expItem);
     });

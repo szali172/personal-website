@@ -2,6 +2,17 @@
     "experiences": 
     [
         {
+            "title": "Software Engineer II",
+            "company": "PlayStation",
+            "logo": "Assets/company_logos/playstation-logo.png",
+            "color": "#00439C",
+            "location": "Remote",
+            "date": "Mar 2025 – Current",
+            "points": [
+                ],
+            "skills": ["Java", "Spring Boot", "React", "Git"]
+        },
+        {
             "title": "Front End Developer/IT Specialist",
             "company": "USGS",
             "logo": "Assets/company_logos/usgs-logo.png",
@@ -41,7 +52,7 @@
                 "Provided personalized tutoring to students through office hours and the course forum, addressing questions and clarifying concepts",
                 "Organized and led weekly quiz preparation and Even More Practice sessions for over 300 students across both Java and Kotlin sections"
             ],
-            "skills": ["Java", "Spring Boot", "React", "Git"]
+            "skills": ["Java", "Kotlin", "Git"]
         }
     ],
     "projects": 
@@ -52,9 +63,9 @@
             "role": "Sole Developer",
             "goal": "Personal Project",
             "relativeDate": "Since Jul 2024",
-            "image": "Assets/linkedin-logo.png",
+            "image": "https://picsum.photos/seed/personalWebsite/450/300",
             "links": ["http://127.0.0.1:5500/index.html", "https://github.com/szali172/personal-website"],
-            "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my vanilla skills 🍦",
+            "description": "Everything you see on this website was handcrafted by yours truly 🙂‍↕️ I was determined to build this website without any frameworks to display my HTML, CSS and vanilla JS skills 🍦",
             "skills": {
                 "backend": [],
                 "frontend": ["HTML 5", "CSS 3", "JavaScript", "Bootstrap"],
@@ -69,7 +80,7 @@
             "role": "Full Stack Developer",
             "goal": "Bootcamp Project",
             "relativeDate": "Oct 2024",
-            "image": "Assets/linkedin-logo.png",
+            "image": "https://picsum.photos/seed/whodis/450/300",
             "links": ["https://github.com/szali172/anonymous-chats-frontend"],
             "description": "An anonymous chatting application where users are placed in random chat rooms within their friends, aiming to guess each other’s identities before the time runs out!",
             "skills": {
@@ -86,7 +97,7 @@
             "role": "Senior Full Stack Developer",
             "goal": "Bootcamp Project",
             "relativeDate": "Sep 2024",
-            "image": "Assets/linkedin-logo.png",
+            "image": "https://picsum.photos/seed/upmeet/450/300",
             "links": ["https://github.com/szali172/upmeet-frontend"],
             "description": "A simple application to find and manage local events. Features interactive event cards with favoriting functionality",
             "skills": {
@@ -103,7 +114,7 @@
             "role": "Lead Back End Developer",
             "goal": "UIUC Project",
             "relativeDate": "Fall 2022",
-            "image": "Assets/linkedin-logo.png",
+            "image": "https://picsum.photos/seed/studybuddy/450/300",
             "links": ["https://github.com/szali172/StudyBuddy"],
             "description": "Connects college students for study sessions, sharing posts and accessing course discussions on Reddit",
             "skills": {
@@ -120,7 +131,7 @@
             "role": "Lead Developer",
             "goal": "UIUC Project",
             "relativeDate": "Fall 2021",
-            "image": "Assets/linkedin-logo.png",
+            "image": "https://picsum.photos/seed/connectingFlights/450/300",
             "links": ["https://github.com/szali172/Connecting-Flights"],
             "description": "Applied graph data structures and Dijkstra’s algorithm to compute and visualize the shortest path from a selected airport to all others worldwide",
             "skills": {
